@@ -1,0 +1,16 @@
+Getting a neural network to run on a microcontroller is harder than it sounds.
+You are not just squeezing a model into less memory — you are fighting the compiler,
+the scheduler, the flash budget, and sometimes the hardware itself, all at once. This
+paper looks at three studies published in 2025 that each attack a different piece
+of that problem. The first, Ariel-ML [1], builds a Rust-based platform that splits
+inference work across multiple CPU cores on low-power MCUs. The second [2]
+deploys a voice-command classifier that recognises 23 keywords on an Arduino Nano
+with 256 KB of RAM. The third [3] tests several compressed MobileNetV2 models
+for detecting people in images on an ARM Cortex-M4, and also measures how much
+energy the whole thing uses when sending results over Wi-Fi. None of these papers
+talks to the other two. Reading them together, though, a clear picture emerges: 8-bit
+quantization is the one technique that always works, multi-core scheduling is being
+completely ignored by most frameworks, and the field still has no agreed way to
+measure and report energy consumption. This paper maps those findings, identifies
+the gaps, and proposes a practical six-step workflow for actually getting TinyML
+models deployed on real embedded hardware.

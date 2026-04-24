@@ -1,0 +1,16 @@
+The deployment of machine learning models on microcontroller units (MCUs) — commonly termed
+TinyML — has emerged as one of the most active frontiers in embedded systems research. This
+paper presents a unified synthesis of three recent contributions that collectively address the key
+challenges of TinyML deployment: (1) parallelization of neural network inference on heterogeneous
+multi-core microcontrollers using embedded Rust (Ariel-ML), (2) speech recognition on highly
+resource-constrained IoT platforms using 1D convolutional neural networks, and (3)
+energy-efficient real-time object detection on low-power MCUs with quantized MobileNetV2. By
+integrating the findings, methods, and benchmarks from these independent but complementary
+works, this paper identifies unifying themes, cross-cutting trade-offs, and a consolidated design
+framework for practitioners. Our synthesis reveals that quantization, multi-core scheduling, and
+lightweight model architectures are the three foundational pillars for practical TinyML deployment.
+We further identify convergent future research directions including on-device training, secure
+over-the-air model updates, hybrid compression strategies, and memory-safe system software.
+The benchmarks reported across all three works highlight that latency, flash footprint, RAM usage,
+and energy consumption must be jointly optimized — a challenge that no single prior work fully
+addresses in isolation.
